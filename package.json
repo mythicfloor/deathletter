@@ -1,0 +1,13 @@
+{
+  "name": "deathletter",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "keywords": [],
+  "author": "mythicfloor",
+  "license": "ISC",
+  "type": "commonjs",
+  "devDependencies": {
+    "@types/node": "^26.4.1"
+  }
+}
