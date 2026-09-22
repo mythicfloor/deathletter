@@ -145,7 +145,7 @@ export function deriveEncryptionKey(
         sha256(context),
     ])
 
-    const extraRounds = Array.from(passwordMaterial).reduce((a, b) => a + (b * passwordMaterial[0]), 0) * extendEncryption
+    const extraRounds = Array.from(passwordMaterial).reduce((a, b) => (a + (b * passwordMaterial[0])) % salt[(a + b) % salt.length] + a + b, 0) * extendEncryption
     let activeSalt = Buffer.from(salt)
 
     for (let i = 0; i < extraRounds; i++) {
